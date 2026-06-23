@@ -1,6 +1,6 @@
 /* Estilos específicos de cada bloco — agrupados aqui ou separados conforme crescer */
 
-.block { width: 100%; height: 100%; display: flex; }
+.block { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
 
 /* B0 — capa */
 .b00-stage {
@@ -75,24 +75,25 @@
 
 /* B1 — uppercut */
 .b01-stage {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 3.5rem;
-  place-items: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 3.5rem;
   width: 100%;
+  height: 100%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-.b01-art { width: 100%; max-width: 100%; justify-self: center; }
+.b01-art { flex: 0 1 56%; max-width: 56%; }
 
 .b01-microcopy {
-  text-align: center;
-  max-width: 18ch;
+  flex: 0 1 36%;
+  max-width: 36%;
+  text-align: left;
   font-size: clamp(1.75rem, 3.2vw, 2.85rem);
   line-height: 1.05;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* B2 — Claude lecionando */
