@@ -97,4 +97,6 @@ html { font-family: var(--font-body); font-size: 16px; }
 
 .accent { color: var(--accent); }
 .muted { color: var(--text-2); }
+.danger { color: var(--danger); }
+.success { color: var(--success); }
 .bold { font-weight: 700; }
