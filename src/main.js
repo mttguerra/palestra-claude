@@ -35,4 +35,7 @@ async function bootstrap() {
   if (import.meta.env.DEV) window.__deck = deck;
 }
 
-bootstrap();
+bootstrap().catch((err) => {
+  console.error('deck boot failed', err);
+  document.body.innerHTML = '<pre style="padding:2rem;color:#F5F2EC;background:#0F0F0E;font-family:monospace">Falha ao carregar deck. Abra o console (F12) para detalhes.\n\n' + (err?.stack || err) + '</pre>';
+});
