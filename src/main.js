@@ -77,5 +77,9 @@ async function bootstrap() {
 
 bootstrap().catch((err) => {
   console.error('deck boot failed', err);
-  document.body.innerHTML = '<pre style="padding:2rem;color:#F5F2EC;background:#0F0F0E;font-family:monospace">Falha ao carregar deck. Abra o console (F12) para detalhes.\n\n' + (err?.stack || err) + '</pre>';
+  document.body.replaceChildren();
+  const pre = document.createElement('pre');
+  pre.style.cssText = 'padding:2rem;color:#F5F2EC;background:#0F0F0E;font-family:monospace;white-space:pre-wrap';
+  pre.textContent = 'Falha ao carregar deck. Abra o console (F12) para detalhes.\n\n' + (err?.stack || String(err));
+  document.body.appendChild(pre);
 });

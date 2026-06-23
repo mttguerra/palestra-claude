@@ -98,7 +98,7 @@ class SlideImage extends HTMLElement {
         img.setAttribute('src', src);
         img.setAttribute('alt', this.getAttribute('alt') || this.getAttribute('brief') || '');
         img.setAttribute('loading', 'lazy');
-        container.appendChild(img);
+        container.insertBefore(img, minibox);
       } else {
         existingImg.setAttribute('src', src);
         existingImg.setAttribute('alt', this.getAttribute('alt') || this.getAttribute('brief') || '');
