@@ -14,6 +14,7 @@ import './components/slide-image.js';
 
 import './blocks/b01-uppercut.js';
 import './blocks/b02-claude.js';
+import './blocks/b03-claude-code.js';
 
 import Reveal from 'reveal.js';
 import { revealConfig } from './reveal-config.js';

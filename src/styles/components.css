@@ -29,3 +29,14 @@
 
 .b02-copy { display: flex; flex-direction: column; gap: 1.5rem; }
 .b02-copy h2 { max-width: 14ch; }
+
+/* B3 — hub Claude Code */
+.b03-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.b03-hub { width: 100%; max-width: 900px; height: auto; }
