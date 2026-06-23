@@ -1,20 +1,25 @@
 import gsap from 'gsap';
 import { registerBlock } from '../animations/timelines.js';
-import { EASE, DURATION, glowLoop } from '../animations/helpers.js';
+import { EASE, DURATION, glowLoop, enterFrom } from '../animations/helpers.js';
+
+let centerGlow = null;
 
 registerBlock('b03', {
   onShow(section) {
+    centerGlow?.kill();
     const center = section.querySelector('.b03-center circle');
     gsap.set(section.querySelectorAll('.b03-node'), { opacity: 0 });
-    // Pulso contínuo no centro
-    glowLoop(center);
+    centerGlow = glowLoop(center);
 
-    // Prepara linhas pra "desenhar" via stroke-dashoffset
     section.querySelectorAll('.b03-node line').forEach((line) => {
       const len = line.getTotalLength();
       line.style.strokeDasharray = len;
       line.style.strokeDashoffset = len;
     });
+  },
+  onHide() {
+    centerGlow?.kill();
+    centerGlow = null;
   },
   onFragmentShown({ fragment }) {
     if (fragment.classList.contains('b03-node')) {
@@ -33,7 +38,7 @@ registerBlock('b03', {
       );
       tl.fromTo(text, { opacity: 0 }, { opacity: 1, duration: 0.2 }, '-=0.15');
     } else {
-      gsap.fromTo(fragment, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.explosive });
+      enterFrom(fragment);
     }
   },
 });

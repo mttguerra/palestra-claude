@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { registerBlock } from '../animations/timelines.js';
-import { EASE, DURATION } from '../animations/helpers.js';
+import { EASE, DURATION, enterFrom } from '../animations/helpers.js';
 
 registerBlock('b07', {
   onFragmentShown({ fragment }) {
@@ -11,7 +11,7 @@ registerBlock('b07', {
         { x: 0, opacity: 1, duration: DURATION.base, ease: EASE.explosive }
       );
     } else {
-      gsap.fromTo(fragment, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.explosive });
+      enterFrom(fragment);
     }
   },
 });
