@@ -10,7 +10,7 @@
     "dev": "vite --port 8080 --host",
     "build": "vite build",
     "preview": "vite preview --port 8080",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
     "test:ui": "vitest --ui"
   },
