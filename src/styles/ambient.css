@@ -1,0 +1,106 @@
+/* Fundo ambient: bolas suaves blureadas que flutuam em loop infinito.
+   Fica position:fixed fora do Reveal, então persiste entre slides — quando
+   você troca de slide elas continuam exatamente onde estavam. */
+
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.ambient-blob--1 {
+  width: 520px; height: 520px;
+  background: var(--accent);
+  top: -120px; left: -140px;
+  opacity: 0.16;
+  animation: blob-float-1 64s ease-in-out infinite;
+}
+
+.ambient-blob--2 {
+  width: 380px; height: 380px;
+  background: var(--accent);
+  bottom: -100px; right: -120px;
+  opacity: 0.12;
+  animation: blob-float-2 56s ease-in-out infinite;
+}
+
+.ambient-blob--3 {
+  width: 460px; height: 460px;
+  background: var(--text-1);
+  top: 30%; left: 35%;
+  opacity: 0.05;
+  animation: blob-float-3 72s ease-in-out infinite;
+}
+
+.ambient-blob--4 {
+  width: 280px; height: 280px;
+  background: var(--accent);
+  top: 60%; left: 5%;
+  opacity: 0.10;
+  animation: blob-float-4 48s ease-in-out infinite;
+}
+
+.ambient-blob--5 {
+  width: 320px; height: 320px;
+  background: var(--text-1);
+  top: 5%; right: 8%;
+  opacity: 0.05;
+  animation: blob-float-5 58s ease-in-out infinite;
+}
+
+@keyframes blob-float-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33%      { transform: translate3d(30vw, 18vh, 0) scale(1.12); }
+  66%      { transform: translate3d(15vw, 45vh, 0) scale(0.92); }
+}
+
+@keyframes blob-float-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  25%      { transform: translate3d(-20vw, -30vh, 0) scale(1.08); }
+  50%      { transform: translate3d(-35vw, -10vh, 0) scale(0.95); }
+  75%      { transform: translate3d(-10vw, -25vh, 0) scale(1.05); }
+}
+
+@keyframes blob-float-3 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  20%      { transform: translate3d(15vw, -20vh, 0) scale(1.10); }
+  50%      { transform: translate3d(-20vw, 10vh, 0) scale(0.88); }
+  80%      { transform: translate3d(10vw, 25vh, 0) scale(1.06); }
+}
+
+@keyframes blob-float-4 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  40%      { transform: translate3d(40vw, -25vh, 0) scale(1.18); }
+  70%      { transform: translate3d(25vw, -45vh, 0) scale(0.95); }
+}
+
+@keyframes blob-float-5 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  30%      { transform: translate3d(-25vw, 30vh, 0) scale(1.08); }
+  60%      { transform: translate3d(-15vw, 55vh, 0) scale(0.92); }
+}
+
+/* Reveal precisa ficar acima do ambient e SEM background sólido bloqueando */
+.reveal,
+.reveal .slides,
+.reveal .slides > section,
+.reveal .slides > section > section {
+  background: transparent !important;
+}
+
+.reveal { position: relative; z-index: 1; }
+
+/* Respeita usuários com motion reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-blob { animation: none; }
+}

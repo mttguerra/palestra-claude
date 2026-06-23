@@ -2,6 +2,19 @@
 
 .block { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
 
+/* Ícones inline (Lucide-style monoline, herdam cor via currentColor) */
+.icon { display: inline-block; flex-shrink: 0; vertical-align: middle; color: currentColor; }
+.icon-sm { width: 16px; height: 16px; }
+.icon-md { width: 24px; height: 24px; }
+.icon-lg { width: 30px; height: 30px; }
+.icon-xl { width: 72px; height: 72px; }
+
+.t-title-icon {
+  vertical-align: -0.2em;
+  color: var(--accent);
+  margin: 0 0.1em;
+}
+
 /* B0 — capa */
 .b00-stage {
   display: grid;
@@ -618,7 +631,13 @@
   text-align: center;
 }
 
-.b09-icon { font-size: 2rem; line-height: 1; }
+.b09-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.b09-icon .icon { width: 36px; height: 36px; }
 
 .b09-image {
   width: 100%;
@@ -662,7 +681,18 @@
   background: var(--bg-2);
   border-radius: 8px;
 }
-.b10-coffee-icon { font-size: 1.75rem; }
+.b10-coffee-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+}
+
+.b10-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+}
 
 .b10-grid {
   display: grid;
@@ -695,6 +725,9 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 /* B11 — esteira de 8 agents */
@@ -714,6 +747,9 @@
 }
 
 .b11-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.6rem 0.85rem;
   background: var(--accent);
   color: var(--bg-1);
@@ -724,15 +760,25 @@
 }
 
 .b11-station {
-  padding: 0.4rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0.55rem 0.5rem 0.4rem;
   background: var(--bg-3);
   border-radius: 6px;
   text-align: center;
-  font-size: 1.25rem;
   min-width: 70px;
+  color: var(--accent);
 }
 
-.b11-station span { font-size: 0.7rem; display: block; }
+.b11-station span {
+  font-size: 0.72rem;
+  font-family: var(--font-body);
+  color: inherit;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 
 .b11-verdict {
   display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
@@ -791,11 +837,14 @@
 
 .b12-final {
   display: flex; align-items: center; gap: 1.5rem;
-  font-size: 2.75rem;
 }
 
 .b12-arrow { font-size: 1.5rem; color: var(--text-3); }
-.b12-bot { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+.b12-bot { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; color: var(--text-3); }
+.b12-bot.accent-glow {
+  color: var(--accent);
+  filter: drop-shadow(0 0 14px rgba(232, 254, 3, 0.55));
+}
 
 /* B13 — antes/depois */
 .b13-stage { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; width: 100%; }
@@ -835,6 +884,13 @@
 }
 
 .b13-numbers .t-punch { font-size: 2rem; }
+
+.b13-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--accent);
+}
 
 /* B14 — fechamento */
 .b14-stage { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; width: 100%; }

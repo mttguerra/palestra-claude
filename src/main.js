@@ -8,6 +8,7 @@ import './styles/tokens.css';
 import './styles/reset.css';
 import './styles/typography.css';
 import './styles/reveal-overrides.css';
+import './styles/ambient.css';
 import './styles/components.css';
 
 import './components/slide-image.js';
