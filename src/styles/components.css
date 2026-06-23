@@ -114,19 +114,55 @@
   white-space: nowrap;
 }
 
-/* B2 — Claude lecionando */
+/* B2 — Claude (spotlight vertical) */
 .b02-stage {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 1rem;
   width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.b02-art { width: 100%; }
+.b02-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-size: 0.8rem;
+}
 
-.b02-copy { display: flex; flex-direction: column; gap: 1.5rem; }
-.b02-copy h2 { max-width: 18ch; }
+.b02-art {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.b02-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+}
+
+.b02-title {
+  margin: 0;
+  font-size: clamp(1.85rem, 3.4vw, 2.85rem);
+  line-height: 1.05;
+  max-width: 22ch;
+}
+
+.b02-sub {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  max-width: 32ch;
+}
 
 /* Marca Claude — laranja Anthropic */
 .claude { color: var(--claude-orange); }
@@ -592,7 +628,15 @@
   text-align: right;
 }
 
-/* B9 — soul + voice */
+/* Lift dos ícones inline no título — sobem pra altura do x-height */
+.b01-stage .t-title-icon,
+.b05-stage .t-title-icon,
+.b07-stage .t-title-icon,
+.b09-stage .t-title-icon {
+  vertical-align: middle;
+  margin-bottom: 0.25em;
+}
+
 .b09-stage {
   display: flex;
   flex-direction: column;

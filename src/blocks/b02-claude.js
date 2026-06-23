@@ -4,28 +4,30 @@ import { EASE, DURATION } from '../animations/helpers.js';
 
 registerBlock('b02', {
   onShow(section) {
+    const eyebrow = section.querySelector('.b02-eyebrow');
     const art = section.querySelector('.b02-art');
-    const copy = section.querySelector('.b02-copy');
-    const title = copy?.querySelector('h2');
-    const sub = copy?.querySelector('p');
+    const title = section.querySelector('.b02-title');
+    const sub = section.querySelector('.b02-sub');
 
-    gsap.set([art, title, sub], { opacity: 0 });
+    gsap.set(eyebrow, { opacity: 0, y: -10 });
+    gsap.set(art, { opacity: 0, scale: 0.94, y: 24 });
+    gsap.set(title, { opacity: 0, y: 18 });
+    gsap.set(sub, { opacity: 0, y: 14 });
 
     const tl = gsap.timeline();
-    tl.fromTo(
+    tl.to(eyebrow, { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy });
+    tl.to(
       art,
-      { opacity: 0, scale: 0.92, y: 20 },
-      { opacity: 1, scale: 1, y: 0, duration: DURATION.slow, ease: EASE.bounceIn }
+      { opacity: 1, scale: 1, y: 0, duration: DURATION.slow, ease: EASE.bounceIn },
+      '-=0.1'
     );
-    tl.fromTo(
+    tl.to(
       title,
-      { opacity: 0, y: 24 },
       { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.explosive },
       '-=0.2'
     );
-    tl.fromTo(
+    tl.to(
       sub,
-      { opacity: 0, y: 16 },
       { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy },
       '-=0.25'
     );
