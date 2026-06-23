@@ -130,15 +130,53 @@
 .b03-hub { width: 100%; max-width: 900px; height: auto; }
 
 /* B4 — terminal */
-.b04-stage { display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; }
+.b04-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.b04-headline {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.b04-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-size: 0.85rem;
+}
+
+.b04-headline h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  line-height: 1.1;
+}
+
+.b04-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
 
 .b04-terminal {
-  width: 100%;
-  max-width: 800px;
   background: var(--bg-2);
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 460px;
 }
 
 .b04-terminal-bar {
@@ -154,18 +192,68 @@
 .b04-terminal-bar span:nth-child(3) { background: var(--success); }
 
 .b04-terminal-body {
-  margin: 0; padding: 1.5rem;
+  margin: 0;
+  padding: 1.25rem 1.5rem;
   color: var(--text-1);
-  min-height: 14em;
+  flex: 1;
   white-space: pre-wrap;
+  font-size: clamp(0.82rem, 0.95vw, 1rem);
+  line-height: 1.5;
+  overflow: hidden;
 }
 
-.b04-result-card {
-  display: flex; flex-direction: column; gap: 0.5rem;
-  padding: 1.5rem 2rem;
+.b04-phases {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.b04-phase {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.95rem;
+  align-items: start;
+  padding: 0.85rem 1.1rem;
   background: var(--bg-2);
-  border-left: 4px solid var(--accent);
-  border-radius: 6px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  flex: 1;
+}
+
+.b04-phase-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: var(--accent);
+  line-height: 1;
+  width: 1.5rem;
+  text-align: center;
+  padding-top: 0.05em;
+}
+
+.b04-phase-body strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-1);
+  line-height: 1.15;
+}
+
+.b04-phase-body p {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+.b04-punch {
+  text-align: center;
+  margin: 0.1rem 0 0;
 }
 
 /* B5 — biblioteca */
