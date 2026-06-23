@@ -437,7 +437,7 @@
   gap: 0.6rem;
 }
 
-.b06-out { align-items: flex-end; }
+.b06-out { text-align: right; }
 
 .b06-side-label {
   font-family: var(--font-display);
@@ -532,7 +532,7 @@
 
 .b07-badge {
   background: var(--badge-color, var(--accent));
-  color: var(--bg-1);
+  color: var(--text-1);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-family: var(--font-display);
@@ -893,19 +893,85 @@
 }
 
 /* B14 — fechamento */
-.b14-stage { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; width: 100%; }
-
-.b14-recap {
-  display: flex; flex-wrap: wrap; gap: 0.4rem;
-  font-family: var(--font-body);
-  color: var(--text-2);
-  font-size: 0.95rem;
-  justify-content: center;
+.b14-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-.b14-cta { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; text-align: center; }
+.b14-recap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  justify-content: center;
+  max-width: 720px;
+}
 
-.b14-final { width: 38%; max-width: 420px; }
+.b14-recap span {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-2);
+}
+
+/* esconde os separadores "·" — viraram pills, não precisam mais */
+.b14-recap span:nth-child(even) {
+  display: none;
+}
+
+.b14-punch {
+  margin: 0.2rem 0 0;
+  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+  line-height: 1;
+  text-align: center;
+  max-width: 18ch;
+}
+
+.b14-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: center;
+  text-align: center;
+  padding: 1.1rem 1.6rem 1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  max-width: 520px;
+}
+
+.b14-cta .t-microcopy {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.2;
+}
+
+.b14-cta .t-caption {
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+}
+
+.b14-final {
+  width: 26%;
+  max-width: 280px;
+  margin: 0.1rem 0;
+}
+
+.b14-microcopy {
+  text-align: center;
+  font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+  max-width: 32ch;
+  margin: 0;
+}
 
 /* ── Centralização vertical+horizontal forçada em TODOS os stages ───────────
    Cada bloco já alinha horizontalmente o conteúdo dele, mas alguns ficavam
