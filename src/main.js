@@ -1,7 +1,6 @@
 import 'reveal.js/reveal.css';
 
-// Clash Display + Satoshi: carregados via CDN Fontshare no index.html
-// (sem pacote @fontsource oficial pra essas faces, Fontshare é a fonte canônica).
+// Clash Display + Satoshi: self-hosted em public/fonts/ via @font-face em typography.css.
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/500.css';
 
