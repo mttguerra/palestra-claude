@@ -52,7 +52,7 @@ html { font-family: var(--font-body); font-size: 16px; }
 .t-punch {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(4rem, 8vw, 7rem);
+  font-size: clamp(2.75rem, 5.5vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.02em;
 }
@@ -60,7 +60,7 @@ html { font-family: var(--font-body); font-size: 16px; }
 .t-title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
   line-height: 1.05;
   letter-spacing: -0.015em;
 }
@@ -68,7 +68,7 @@ html { font-family: var(--font-body); font-size: 16px; }
 .t-microcopy {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
   line-height: 1.15;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -77,8 +77,8 @@ html { font-family: var(--font-body); font-size: 16px; }
 .t-body {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
-  line-height: 1.5;
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.45;
 }
 
 .t-caption {

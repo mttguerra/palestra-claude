@@ -1,6 +1,6 @@
 .reveal {
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--text-1);
   background: var(--bg-1);
 }
@@ -11,8 +11,18 @@
 
 .reveal .slides > section,
 .reveal .slides > section > section {
-  padding: 4rem 6rem;
+  padding: 2.5rem 4rem;
   background: var(--bg-1);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.reveal .slides > section > .block {
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .reveal .progress {
