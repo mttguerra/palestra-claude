@@ -13,6 +13,7 @@ import './components/slide-image.js';
 
 import Reveal from 'reveal.js';
 import { revealConfig } from './reveal-config.js';
+import { getHandlers, getBlockIdFromSection } from './animations/timelines.js';
 
 async function loadBlocks() {
   const blockModules = import.meta.glob('./blocks/*.html', {
@@ -35,6 +36,43 @@ async function bootstrap() {
   const deck = new Reveal(revealConfig);
   await deck.initialize();
   if (import.meta.env.DEV) window.__deck = deck;
+
+  deck.on('slidechanged', (event) => {
+    const id = getBlockIdFromSection(event.currentSlide);
+    if (!id) return;
+    const handlers = getHandlers(id);
+    if (handlers?.onShow) handlers.onShow(event.currentSlide);
+
+    const prevId = getBlockIdFromSection(event.previousSlide);
+    if (prevId) {
+      const prev = getHandlers(prevId);
+      if (prev?.onHide) prev.onHide(event.previousSlide);
+    }
+  });
+
+  deck.on('fragmentshown', (event) => {
+    const section = event.fragment.closest('section');
+    const id = getBlockIdFromSection(section);
+    if (!id) return;
+    const handlers = getHandlers(id);
+    if (handlers?.onFragmentShown) handlers.onFragmentShown(event);
+  });
+
+  deck.on('fragmenthidden', (event) => {
+    const section = event.fragment.closest('section');
+    const id = getBlockIdFromSection(section);
+    if (!id) return;
+    const handlers = getHandlers(id);
+    if (handlers?.onFragmentHidden) handlers.onFragmentHidden(event);
+  });
+
+  // Dispara onShow do primeiro slide manualmente (porque slidechanged não dispara no boot)
+  const first = deck.getCurrentSlide();
+  const firstId = getBlockIdFromSection(first);
+  if (firstId) {
+    const handlers = getHandlers(firstId);
+    if (handlers?.onShow) handlers.onShow(first);
+  }
 }
 
 bootstrap().catch((err) => {
