@@ -1,0 +1,31 @@
+.reveal {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--text-1);
+  background: var(--bg-1);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  padding: 4rem 6rem;
+  background: var(--bg-1);
+}
+
+.reveal .progress {
+  height: 2px;
+  color: var(--accent);
+  background: var(--border);
+}
+
+.reveal .slide-number {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-3);
+  background: transparent;
+}
+
+.reveal .controls { display: none; }
