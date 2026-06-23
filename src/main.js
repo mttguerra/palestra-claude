@@ -17,6 +17,7 @@ import './blocks/b02-claude.js';
 import './blocks/b03-claude-code.js';
 import './blocks/b04-terminal.js';
 import './blocks/b05-biblioteca.js';
+import './blocks/b06-notion.js';
 
 import Reveal from 'reveal.js';
 import { revealConfig } from './reveal-config.js';
