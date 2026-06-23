@@ -8,8 +8,11 @@ import './styles/tokens.css';
 import './styles/reset.css';
 import './styles/typography.css';
 import './styles/reveal-overrides.css';
+import './styles/components.css';
 
 import './components/slide-image.js';
+
+import './blocks/b01-uppercut.js';
 
 import Reveal from 'reveal.js';
 import { revealConfig } from './reveal-config.js';

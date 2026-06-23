@@ -1,0 +1,17 @@
+/* Estilos específicos de cada bloco — agrupados aqui ou separados conforme crescer */
+
+.block { width: 100%; height: 100%; display: flex; }
+
+/* B1 — uppercut */
+.b01-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.b01-art { width: 60%; max-width: 720px; }
+
+.b01-microcopy { text-align: center; max-width: 16ch; }
