@@ -22,6 +22,7 @@ import './blocks/b07-agent.js';
 import './blocks/b08-praticas.js';
 import './blocks/b09-soul-voice.js';
 import './blocks/b10-skills.js';
+import './blocks/b11-filtro.js';
 
 import Reveal from 'reveal.js';
 import { revealConfig } from './reveal-config.js';
