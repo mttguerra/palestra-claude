@@ -96,6 +96,8 @@
   margin: 0;
 }
 
+.b01-microcopy .b01-line { display: block; }
+
 /* B2 — Claude lecionando */
 .b02-stage {
   display: grid;
