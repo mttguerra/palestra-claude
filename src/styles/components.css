@@ -113,7 +113,10 @@
 .b02-art { width: 100%; }
 
 .b02-copy { display: flex; flex-direction: column; gap: 1.5rem; }
-.b02-copy h2 { max-width: 14ch; }
+.b02-copy h2 { max-width: 18ch; }
+
+/* Marca Claude — laranja Anthropic */
+.claude { color: var(--claude-orange); }
 
 /* B3 — hub Claude Code */
 .b03-stage {
@@ -521,3 +524,27 @@
 .b14-cta { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; text-align: center; }
 
 .b14-final { width: 38%; max-width: 420px; }
+
+/* ── Centralização vertical+horizontal forçada em TODOS os stages ───────────
+   Cada bloco já alinha horizontalmente o conteúdo dele, mas alguns ficavam
+   colados no topo do slide. Aqui forçamos height:100% + justify-content:center
+   pra que o conteúdo do stage fique sempre no centro vertical do slide. */
+.b00-stage,
+.b01-stage,
+.b02-stage,
+.b03-stage,
+.b04-stage,
+.b05-stage,
+.b06-stage,
+.b07-stage,
+.b08-stage,
+.b09-stage,
+.b10-stage,
+.b11-stage,
+.b12-stage,
+.b13-stage,
+.b14-stage {
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+}

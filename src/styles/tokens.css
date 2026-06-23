@@ -13,6 +13,9 @@
   --accent: #E8FE03;
   --accent-hover: #EEFE3E;
 
+  /* Cor de marca do Claude (laranja Anthropic) */
+  --claude-orange: #D97757;
+
   /* Bordas */
   --border: #2A2A2D;
   --border-focus: #E8FE03;
