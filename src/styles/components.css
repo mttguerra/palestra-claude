@@ -75,17 +75,23 @@
 
 /* B1 — uppercut */
 .b01-stage {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 3.5rem;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.b01-art { width: 45%; max-width: 520px; }
+.b01-art { width: 100%; max-width: 100%; }
 
-.b01-microcopy { text-align: center; max-width: 16ch; }
+.b01-microcopy {
+  text-align: left;
+  max-width: 14ch;
+  font-size: clamp(1.75rem, 3.2vw, 2.85rem);
+  line-height: 1.05;
+}
 
 /* B2 — Claude lecionando */
 .b02-stage {
