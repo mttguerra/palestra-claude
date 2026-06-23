@@ -5,32 +5,35 @@ import { EASE, DURATION } from '../animations/helpers.js';
 registerBlock('b05', {
   onShow(section) {
     const title = section.querySelector('.b05-title');
-    const books = section.querySelectorAll('.b05-book');
+    const desc = section.querySelector('.b05-desc');
     const microcopy = section.querySelector('.b05-microcopy');
+    const books = section.querySelectorAll('.b05-book');
 
-    gsap.set([title, microcopy], { opacity: 0, y: 24 });
-    gsap.set(books, { opacity: 0, y: -260, rotate: -10 });
+    gsap.set([title, desc, microcopy], { opacity: 0, y: 24 });
+    gsap.set(books, { opacity: 0, y: -200 });
 
     const tl = gsap.timeline();
 
-    // 1. Título entra
     tl.to(title, { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy });
 
-    // 2. Livros caem em cascata, um por um, com bounce
     tl.to(
       books,
       {
         opacity: 1,
         y: 0,
-        rotate: 0,
         duration: DURATION.slow,
         ease: EASE.bounceIn,
-        stagger: 0.18,
+        stagger: 0.14,
       },
-      '-=0.1'
+      '-=0.15'
     );
 
-    // 3. Microcopy fecha
+    tl.to(
+      desc,
+      { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy },
+      '-=0.45'
+    );
+
     tl.to(
       microcopy,
       { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy },
