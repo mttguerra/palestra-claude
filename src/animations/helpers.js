@@ -43,6 +43,15 @@ export function staggerIn(targets, options = {}) {
   );
 }
 
+export function enterFrom(target, options = {}) {
+  const { y = 30, x = 0, duration = DURATION.base, ease = EASE.explosive, ...rest } = options;
+  return gsap.fromTo(
+    target,
+    { opacity: 0, y, x },
+    { opacity: 1, y: 0, x: 0, duration, ease, ...rest }
+  );
+}
+
 export function fadeOut(target, options = {}) {
   const { duration = 0.25 } = options;
   return gsap.to(target, { opacity: 0, duration, ease: EASE.exit });
