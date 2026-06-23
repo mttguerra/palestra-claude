@@ -15,3 +15,17 @@
 .b01-art { width: 60%; max-width: 720px; }
 
 .b01-microcopy { text-align: center; max-width: 16ch; }
+
+/* B2 — Claude lecionando */
+.b02-stage {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.b02-art { width: 100%; }
+
+.b02-copy { display: flex; flex-direction: column; gap: 1.5rem; }
+.b02-copy h2 { max-width: 14ch; }
