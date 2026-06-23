@@ -133,3 +133,39 @@
   text-align: center;
   margin-top: 2rem;
 }
+
+/* B7 — agents/escritório */
+.b07-stage { display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; }
+
+.b07-office {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.b07-worker {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: var(--bg-2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.b07-badge {
+  background: var(--accent);
+  color: var(--bg-1);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.b07-role {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-2);
+}
