@@ -20,6 +20,7 @@ import './blocks/b05-biblioteca.js';
 import './blocks/b06-notion.js';
 import './blocks/b07-agent.js';
 import './blocks/b08-praticas.js';
+import './blocks/b09-soul-voice.js';
 
 import Reveal from 'reveal.js';
 import { revealConfig } from './reveal-config.js';

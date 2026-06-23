@@ -200,3 +200,41 @@
   font-size: 0.95rem;
   text-align: right;
 }
+
+/* B9 — soul + voice */
+.b09-stage { display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; }
+
+.b09-equation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.b09-pillar {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-2);
+  border-radius: 8px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.b09-icon { font-size: 3rem; }
+
+.b09-plus {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+.b09-voicespec { width: 45%; max-width: 360px; }
+
+.b09-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.b09-col { display: flex; flex-direction: column; gap: 0.5rem; }
+.b09-col ul { display: flex; flex-direction: column; gap: 0.4rem; }
