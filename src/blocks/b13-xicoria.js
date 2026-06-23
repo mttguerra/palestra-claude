@@ -4,7 +4,9 @@ import { EASE, DURATION, enterFrom } from '../animations/helpers.js';
 
 registerBlock('b13', {
   onShow(section) {
-    // Lado "antes" entra desaturado por padrão
+    // Lado "antes" entra desaturado por padrão.
+    // Se um dia o "after" ganhar transição de cor mais elaborada, este set
+    // precisa virar idempotente vs estado final do slide.
     const before = section.querySelector('.b13-before');
     if (before) gsap.set(before, { filter: 'grayscale(1)', opacity: 1 });
   },
