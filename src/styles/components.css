@@ -56,7 +56,7 @@
   width: 180px;
   background: var(--accent);
   border-radius: 2px;
-  box-shadow: 0 0 24px rgba(232, 254, 3, 0.4);
+  box-shadow: 0 0 24px rgba(217, 119, 87, 0.4);
 }
 
 .b00-presenter {
@@ -470,14 +470,14 @@
   background: var(--bg-2);
   border-radius: 16px;
   border: 2px solid var(--accent);
-  box-shadow: 0 0 40px rgba(232, 254, 3, 0.25);
+  box-shadow: 0 0 40px rgba(217, 119, 87, 0.25);
 }
 
 .b06-notion-logo {
   width: 90px;
   height: 90px;
   object-fit: contain;
-  filter: drop-shadow(0 0 12px rgba(245, 242, 236, 0.15));
+  filter: drop-shadow(0 0 12px rgba(26, 24, 20, 0.15));
 }
 
 .b06-center-label {
@@ -843,7 +843,7 @@
 .b12-bot { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; color: var(--text-3); }
 .b12-bot.accent-glow {
   color: var(--accent);
-  filter: drop-shadow(0 0 14px rgba(232, 254, 3, 0.55));
+  filter: drop-shadow(0 0 14px rgba(217, 119, 87, 0.55));
 }
 
 /* B13 — antes/depois */

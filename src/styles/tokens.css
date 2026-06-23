@@ -1,29 +1,29 @@
 :root {
-  /* Fundos */
-  --bg-1: #0F0F0E;
-  --bg-2: #18181A;
-  --bg-3: #232326;
+  /* Fundos — light "papel" */
+  --bg-1: #FAF7F2;   /* canvas (off-white quente) */
+  --bg-2: #F2EDE5;   /* cards / painéis elevados */
+  --bg-3: #E8E0D4;   /* modais / popovers / hover surfaces */
 
-  /* Texto */
-  --text-1: #F5F2EC;
-  --text-2: #B8B5AE;
-  --text-3: #6E6B65;
+  /* Texto — escuro quente sobre papel */
+  --text-1: #1A1814;   /* principal (quase preto, quente) */
+  --text-2: #5A5247;   /* secundário (cinza médio quente) */
+  --text-3: #8A8478;   /* muted (caption, footer) */
 
-  /* Acento */
-  --accent: #E8FE03;
-  --accent-hover: #EEFE3E;
+  /* Acento — laranja Claude / Anthropic oficial */
+  --accent: #D97757;
+  --accent-hover: #E89270;
 
-  /* Cor de marca do Claude (laranja Anthropic) */
+  /* Cor de marca do Claude (mantida pra referência) */
   --claude-orange: #D97757;
 
   /* Bordas */
-  --border: #2A2A2D;
-  --border-focus: #E8FE03;
+  --border: #D9D2C5;
+  --border-focus: #D97757;
 
-  /* Semânticas */
-  --success: #4ADE80;
-  --danger: #F87171;
-  --muted-cool: #5C5C60;
+  /* Semânticas (versões mais escuras pra contraste com fundo claro) */
+  --success: #2D9560;
+  --danger: #C9453F;
+  --muted-cool: #999999;
 
   /* Timing/easing */
   --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);

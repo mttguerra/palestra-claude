@@ -29,7 +29,7 @@ registerBlock('b10', {
     tl.to(
       skills,
       {
-        boxShadow: '0 0 0 2px var(--accent), 0 0 24px rgba(232,254,3,0.4)',
+        boxShadow: '0 0 0 2px var(--accent), 0 0 24px rgba(217,119,87,0.4)',
         duration: 0.25,
         stagger: 0.09,
       },

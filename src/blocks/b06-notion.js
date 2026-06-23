@@ -52,7 +52,7 @@ registerBlock('b06', {
     );
     tl.add(() => {
       notionGlow = gsap.to(center, {
-        boxShadow: '0 0 60px rgba(232, 254, 3, 0.55), 0 0 120px rgba(232, 254, 3, 0.25)',
+        boxShadow: '0 0 60px rgba(217, 119, 87, 0.55), 0 0 120px rgba(217, 119, 87, 0.25)',
         duration: 1.4,
         yoyo: true,
         repeat: -1,
