@@ -32,7 +32,7 @@ async function bootstrap() {
   await loadBlocks();
   const deck = new Reveal(revealConfig);
   await deck.initialize();
-  window.__deck = deck;
+  if (import.meta.env.DEV) window.__deck = deck;
 }
 
 bootstrap();
