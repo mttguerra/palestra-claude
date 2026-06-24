@@ -2,51 +2,50 @@
   <div class="b04-stage">
     <header class="b04-headline">
       <span class="b04-eyebrow">PARECE HACKER?</span>
-      <h2 class="t-title">Conversa como se fosse <span class="accent">seu amigo</span>.</h2>
+      <h2 class="t-title">Converse como se fosse <span class="accent">seu amigo</span>.</h2>
     </header>
 
-    <div class="b04-grid">
-      <div class="b04-terminal" aria-label="terminal">
+    <div class="b04-deck" id="b04-deck">
+      <div class="b04-terminal" aria-label="chat com o agente">
         <div class="b04-terminal-bar">
-          <span></span><span></span><span></span>
+          <span class="b04-terminal-dot"></span>
+          <span class="b04-terminal-dot"></span>
+          <span class="b04-terminal-dot"></span>
+          <span class="b04-terminal-title">claude-code &mdash; criativo</span>
         </div>
-        <pre class="b04-terminal-body t-mono"><code id="b04-stream"></code></pre>
+        <div class="b04-chat" id="b04-chat" role="log" aria-live="polite"></div>
       </div>
 
-      <ol class="b04-phases">
-        <li class="b04-phase">
-          <span class="b04-phase-num">1</span>
-          <div class="b04-phase-body">
-            <strong>Você pede.</strong>
-            <p>Em português. Sem código. Igual mensagem no zap.</p>
+      <aside class="b04-creative" aria-hidden="true">
+        <div class="b04-creative-stack">
+          <!-- carta de trás (3º) -->
+          <div class="b04-creative-frame b04-creative-frame--back" aria-hidden="true">
+            <div class="b04-creative-media b04-creative-media--placeholder"></div>
           </div>
-        </li>
-        <li class="b04-phase">
-          <span class="b04-phase-num">2</span>
-          <div class="b04-phase-body">
-            <strong>Ele lê o vídeo.</strong>
-            <p>Assiste, transcreve e acha o gancho dos 3 primeiros segundos.</p>
+          <!-- carta do meio (2º) -->
+          <div class="b04-creative-frame b04-creative-frame--mid" aria-hidden="true">
+            <div class="b04-creative-media b04-creative-media--placeholder"></div>
           </div>
-        </li>
-        <li class="b04-phase">
-          <span class="b04-phase-num">3</span>
-          <div class="b04-phase-body">
-            <strong>7 especialistas validam.</strong>
-            <p>Cada agent revisa uma parte: hook, corpo, oferta, voz…</p>
+          <!-- carta da frente (1º — o exemplo) -->
+          <div class="b04-creative-frame b04-creative-frame--front">
+            <div class="b04-creative-media">
+              <img src="/img/criativo-exemplo.jpg" alt="Criativo gerado pelo Claude — exemplo Xicória." class="b04-creative-img" loading="lazy" />
+            </div>
+            <div class="b04-creative-badge">
+              <span class="b04-creative-badge-tick">✓</span>
+              <span class="b04-creative-badge-score">96<span class="b04-creative-badge-score-max">/100</span></span>
+            </div>
+            <div class="b04-creative-caption">
+              <span class="b04-creative-caption-label">criativo aprovado</span>
+              <span class="b04-creative-caption-meta">modelo-fofoca-1.jpg · xicoria</span>
+            </div>
           </div>
-        </li>
-        <li class="b04-phase">
-          <span class="b04-phase-num">4</span>
-          <div class="b04-phase-body">
-            <strong>Sai aprovado. Nota 96.</strong>
-            <p>Criativo pronto. Você não escreveu uma linha de código.</p>
-          </div>
-        </li>
-      </ol>
+        </div>
+      </aside>
     </div>
 
     <p class="t-microcopy b04-punch">
-      Você não programa. Você <span class="accent">PEDE</span>.
+      Você não programa. Você <span class="accent">PEDE</span> e o agent faz.
     </p>
   </div>
 </section>

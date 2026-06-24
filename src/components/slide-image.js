@@ -52,6 +52,12 @@ TEMPLATE.innerHTML = `
 
     /* Esconde o minibox quando há imagem real */
     :host([src]) .minibox { display: none; }
+
+    /* Container transparente quando há imagem real, pra PNGs com alpha */
+    :host([src]) .container { background: transparent; }
+
+    /* Imagem respeita transparência: contain ao invés de cover */
+    :host([src]) img { object-fit: contain; }
   </style>
 
   <div class="container">

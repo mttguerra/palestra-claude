@@ -15,7 +15,6 @@ import './components/slide-image.js';
 
 import './blocks/b00-capa.js';
 import './blocks/b01-uppercut.js';
-import './blocks/b02-claude.js';
 import './blocks/b03-claude-code.js';
 import './blocks/b04-terminal.js';
 import './blocks/b05-biblioteca.js';
@@ -23,6 +22,8 @@ import './blocks/b06-notion.js';
 import './blocks/b07-agent.js';
 import './blocks/b08-praticas.js';
 import './blocks/b09-soul-voice.js';
+import './blocks/b09a-notion-org.js';
+import './blocks/b09b-coffee.js';
 import './blocks/b10-skills.js';
 import './blocks/b11-filtro.js';
 import './blocks/b12-aprende.js';

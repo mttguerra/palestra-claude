@@ -3,48 +3,56 @@
     <div class="b03-headline">
       <div class="b03-eyebrow">Claude Code</div>
       <h2 class="t-title b03-title">
-        Saiu do site.<br/>
+        Saiu da janelinha.<br/>
         Mora no seu <span class="accent">computador.</span>
       </h2>
-      <p class="b03-sub">Lê seus arquivos. Executa por você.</p>
+      <p class="b03-sub"><strong>Lê</strong> seus arquivos. <span class="accent">Executa</span> por você.</p>
     </div>
 
     <svg viewBox="0 0 800 500" class="b03-hub" aria-hidden="true">
-      <!-- 6 nós + 6 fios -->
-      <g class="b03-node" data-node="files">
-        <line x1="400" y1="250" x2="120" y2="100" stroke="var(--accent)" stroke-width="2" />
-        <circle cx="120" cy="100" r="38" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
-        <image href="/img/icons/folder.svg" x="98" y="78" width="44" height="44" />
-      </g>
+      <!-- 6 nós em posições simétricas (60° entre cada), wrapper orbita o centro -->
+      <g class="b03-orbit">
+        <!-- 0° direita (github) -->
+        <g class="b03-node" data-node="github">
+          <line x1="400" y1="250" x2="600" y2="250" stroke="var(--accent)" stroke-width="2" />
+          <circle cx="600" cy="250" r="44" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
+          <image href="/img/icons/github.svg" x="572" y="222" width="56" height="56" />
+        </g>
 
-      <g class="b03-node" data-node="notion">
-        <line x1="400" y1="250" x2="680" y2="100" stroke="var(--accent)" stroke-width="2" />
-        <circle cx="680" cy="100" r="38" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
-        <image href="/img/icons/notion.svg" x="658" y="78" width="44" height="44" />
-      </g>
+        <!-- 60° superior-direito (notion) -->
+        <g class="b03-node" data-node="notion">
+          <line x1="400" y1="250" x2="500" y2="77" stroke="var(--accent)" stroke-width="2" />
+          <circle cx="500" cy="77" r="44" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
+          <image href="/img/icons/notion.svg" x="472" y="49" width="56" height="56" />
+        </g>
 
-      <g class="b03-node" data-node="wpp">
-        <line x1="400" y1="250" x2="80" y2="250" stroke="var(--accent)" stroke-width="2" />
-        <circle cx="80" cy="250" r="38" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
-        <image href="/img/icons/whatsapp.svg" x="58" y="228" width="44" height="44" />
-      </g>
+        <!-- 120° superior-esquerdo (files) -->
+        <g class="b03-node" data-node="files">
+          <line x1="400" y1="250" x2="300" y2="77" stroke="var(--accent)" stroke-width="2" />
+          <circle cx="300" cy="77" r="44" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
+          <image href="/img/icons/folder.svg" x="272" y="49" width="56" height="56" />
+        </g>
 
-      <g class="b03-node" data-node="github">
-        <line x1="400" y1="250" x2="720" y2="250" stroke="var(--accent)" stroke-width="2" />
-        <circle cx="720" cy="250" r="38" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
-        <image href="/img/icons/github.svg" x="698" y="228" width="44" height="44" />
-      </g>
+        <!-- 180° esquerda (wpp) -->
+        <g class="b03-node" data-node="wpp">
+          <line x1="400" y1="250" x2="200" y2="250" stroke="var(--accent)" stroke-width="2" />
+          <circle cx="200" cy="250" r="44" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
+          <image href="/img/icons/whatsapp.svg" x="172" y="222" width="56" height="56" />
+        </g>
 
-      <g class="b03-node" data-node="terminal">
-        <line x1="400" y1="250" x2="120" y2="400" stroke="var(--accent)" stroke-width="2" />
-        <circle cx="120" cy="400" r="38" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
-        <image href="/img/icons/terminal.svg" x="98" y="378" width="44" height="44" />
-      </g>
+        <!-- 240° inferior-esquerdo (terminal) -->
+        <g class="b03-node" data-node="terminal">
+          <line x1="400" y1="250" x2="300" y2="423" stroke="var(--accent)" stroke-width="2" />
+          <circle cx="300" cy="423" r="44" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
+          <image href="/img/icons/terminal.svg" x="272" y="395" width="56" height="56" />
+        </g>
 
-      <g class="b03-node" data-node="sheet">
-        <line x1="400" y1="250" x2="680" y2="400" stroke="var(--accent)" stroke-width="2" />
-        <circle cx="680" cy="400" r="38" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
-        <image href="/img/icons/sheet.svg" x="658" y="378" width="44" height="44" />
+        <!-- 300° inferior-direito (sheet) -->
+        <g class="b03-node" data-node="sheet">
+          <line x1="400" y1="250" x2="500" y2="423" stroke="var(--accent)" stroke-width="2" />
+          <circle cx="500" cy="423" r="44" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2" />
+          <image href="/img/icons/sheet.svg" x="472" y="395" width="56" height="56" />
+        </g>
       </g>
 
       <!-- Nó central renderizado por último → fica por cima das linhas -->

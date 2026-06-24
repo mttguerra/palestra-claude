@@ -1,25 +1,107 @@
 <section data-block="b06" class="block block--b06">
   <div class="b06-stage">
-    <h2 class="t-title b06-title">O <span class="accent">centro</span> da operação</h2>
+    <h2 class="t-title b06-title">O <span class="accent">coração</span> da operação</h2>
 
     <div class="b06-hub">
+      <svg class="b06-arteries" viewBox="0 0 1000 220" aria-hidden="true">
+        <defs>
+          <path id="b06-art-l-top" d="" />
+          <path id="b06-art-l-mid" d="" />
+          <path id="b06-art-l-bot" d="" />
+          <path id="b06-art-r-top" d="" />
+          <path id="b06-art-r-mid" d="" />
+          <path id="b06-art-r-bot" d="" />
+        </defs>
+
+        <g class="b06-art-base">
+          <use href="#b06-art-l-top" />
+          <use href="#b06-art-l-mid" />
+          <use href="#b06-art-l-bot" />
+          <use href="#b06-art-r-top" />
+          <use href="#b06-art-r-mid" />
+          <use href="#b06-art-r-bot" />
+        </g>
+
+        <g class="b06-art-flow">
+          <use class="b06-flow b06-flow--in"  href="#b06-art-l-top" />
+          <use class="b06-flow b06-flow--in"  href="#b06-art-l-mid" />
+          <use class="b06-flow b06-flow--in"  href="#b06-art-l-bot" />
+          <use class="b06-flow b06-flow--out" href="#b06-art-r-top" />
+          <use class="b06-flow b06-flow--out" href="#b06-art-r-mid" />
+          <use class="b06-flow b06-flow--out" href="#b06-art-r-bot" />
+        </g>
+      </svg>
+
       <div class="b06-side b06-in">
         <div class="b06-side-label">ENTRA</div>
-        <div class="b06-card">vídeos virais</div>
-        <div class="b06-card">ideias</div>
-        <div class="b06-card">insights</div>
+
+        <div class="b06-card">
+          <span class="b06-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+          </span>
+          <span class="b06-card-text">
+            <strong>Vídeos virais</strong>
+            <em>monitorados e captados</em>
+          </span>
+        </div>
+
+        <div class="b06-card">
+          <span class="b06-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+          </span>
+          <span class="b06-card-text">
+            <strong>Ideias</strong>
+            <em>brainstorms e roteiros</em>
+          </span>
+        </div>
+
+        <div class="b06-card">
+          <span class="b06-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 6-6"/></svg>
+          </span>
+          <span class="b06-card-text">
+            <strong>Insights</strong>
+            <em>métricas e tendências</em>
+          </span>
+        </div>
       </div>
 
-      <div class="b06-center">
-        <img src="/img/icons/notion.svg" alt="Notion" class="b06-notion-logo" />
-        <div class="b06-center-label">NOTION</div>
+      <div class="b06-heart-wrap">
+        <div class="b06-heart" role="img" aria-label="Notion como o coração da operação"></div>
       </div>
 
       <div class="b06-side b06-out">
         <div class="b06-side-label">SAI</div>
-        <div class="b06-card">criativos prontos</div>
-        <div class="b06-card">relatórios</div>
-        <div class="b06-card">painéis</div>
+
+        <div class="b06-card">
+          <span class="b06-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+          </span>
+          <span class="b06-card-text">
+            <strong>Criativos</strong>
+            <em>prontos pra tráfego</em>
+          </span>
+        </div>
+
+        <div class="b06-card">
+          <span class="b06-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          </span>
+          <span class="b06-card-text">
+            <strong>Relatórios</strong>
+            <em>performance do dia</em>
+          </span>
+        </div>
+
+        <div class="b06-card">
+          <span class="b06-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </span>
+          <span class="b06-card-text">
+            <strong>Painéis</strong>
+            <em>tudo num lugar só</em>
+          </span>
+        </div>
       </div>
     </div>
 
@@ -28,9 +110,21 @@
     </p>
 
     <div class="b06-complement">
-      <span><strong>GitHub</strong> guarda</span>
-      <span class="b06-comp-sep">·</span>
-      <span><strong>Notion</strong> <span class="accent">organiza</span></span>
+      <div class="b06-comp-pill b06-comp-pill--github">
+        <svg class="b06-comp-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+        </svg>
+        <span class="b06-comp-text"><strong>GitHub</strong> <em>guarda</em></span>
+      </div>
+
+      <span class="b06-comp-sep" aria-hidden="true">+</span>
+
+      <div class="b06-comp-pill b06-comp-pill--notion">
+        <svg class="b06-comp-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933z"/>
+        </svg>
+        <span class="b06-comp-text"><strong>Notion</strong> <em>organiza</em></span>
+      </div>
     </div>
   </div>
 </section>

@@ -3,32 +3,36 @@ import { registerBlock } from '../animations/timelines.js';
 import { EASE, DURATION, glowLoop } from '../animations/helpers.js';
 
 let centerGlow = null;
+let orbitTween = null;
+const counterTweens = [];
 
 registerBlock('b03', {
   onShow(section) {
     centerGlow?.kill();
+    orbitTween?.kill();
+    counterTweens.forEach((t) => t.kill());
+    counterTweens.length = 0;
 
     const title = section.querySelector('.b03-title');
     const center = section.querySelector('.b03-center');
     const centerCircle = center.querySelector('circle');
+    const orbit = section.querySelector('.b03-orbit');
     const nodes = section.querySelectorAll('.b03-node');
     const microcopy = section.querySelector('.b03-microcopy');
 
     // Estado inicial
     gsap.set([title, microcopy], { opacity: 0, y: 24 });
-    gsap.set(center, { opacity: 0, scale: 0, transformOrigin: '400px 250px' });
+    gsap.set(center, { opacity: 0, scale: 0, svgOrigin: '400 250' });
 
     nodes.forEach((node) => {
       const line = node.querySelector('line');
       const circle = node.querySelector('circle');
-      const text = node.querySelector('text');
       const len = line.getTotalLength();
       line.style.strokeDasharray = len;
       line.style.strokeDashoffset = len;
       const cx = parseFloat(circle.getAttribute('cx'));
       const cy = parseFloat(circle.getAttribute('cy'));
-      gsap.set(circle, { scale: 0, transformOrigin: `${cx}px ${cy}px` });
-      gsap.set(text, { opacity: 0 });
+      gsap.set(circle, { scale: 0, svgOrigin: `${cx} ${cy}` });
       gsap.set(node, { opacity: 1 });
     });
 
@@ -50,7 +54,6 @@ registerBlock('b03', {
     nodes.forEach((node, i) => {
       const line = node.querySelector('line');
       const circle = node.querySelector('circle');
-      const text = node.querySelector('text');
       const at = i * stagger;
       tl.to(line, { strokeDashoffset: 0, duration: 0.4, ease: EASE.snappy }, `nodes+=${at}`);
       tl.to(
@@ -58,7 +61,6 @@ registerBlock('b03', {
         { scale: 1, duration: 0.4, ease: EASE.explosive },
         `nodes+=${at + 0.15}`
       );
-      tl.to(text, { opacity: 1, duration: 0.2 }, `nodes+=${at + 0.3}`);
     });
 
     // 4. Microcopy final fecha
@@ -72,9 +74,45 @@ registerBlock('b03', {
     tl.add(() => {
       centerGlow = glowLoop(centerCircle);
     });
+
+    // 6. Órbita contínua dos nós ao redor do centro — 20s/volta (visível mas não tonto)
+    tl.add(() => {
+      const ORBIT_DUR = 20;
+      orbitTween = gsap.to(orbit, {
+        rotation: 360,
+        duration: ORBIT_DUR,
+        ease: 'none',
+        repeat: -1,
+        svgOrigin: '400 250',
+      });
+
+      // Contra-rotação dos ícones pra ficarem sempre em pé
+      nodes.forEach((node) => {
+        const image = node.querySelector('image');
+        if (!image) return;
+        const x = parseFloat(image.getAttribute('x'));
+        const y = parseFloat(image.getAttribute('y'));
+        const w = parseFloat(image.getAttribute('width'));
+        const h = parseFloat(image.getAttribute('height'));
+        const cx = x + w / 2;
+        const cy = y + h / 2;
+        const t = gsap.to(image, {
+          rotation: -360,
+          duration: ORBIT_DUR,
+          ease: 'none',
+          repeat: -1,
+          svgOrigin: `${cx} ${cy}`,
+        });
+        counterTweens.push(t);
+      });
+    }, '+=0.3');
   },
   onHide() {
     centerGlow?.kill();
     centerGlow = null;
+    orbitTween?.kill();
+    orbitTween = null;
+    counterTweens.forEach((t) => t.kill());
+    counterTweens.length = 0;
   },
 });
