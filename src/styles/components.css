@@ -354,6 +354,16 @@ video.b01-art {
 
 .b03-microcopy { text-align: center; margin: 0; }
 
+/* Pulso de luz viajando do núcleo até cada ferramenta */
+.b03-pulse {
+  filter: drop-shadow(0 0 6px var(--accent));
+}
+
+/* Sonar radial saindo do centro */
+.b03-scan circle {
+  filter: drop-shadow(0 0 3px var(--accent));
+}
+
 /* B4 — terminal */
 .b04-stage {
   display: flex;
@@ -1026,11 +1036,6 @@ video.b01-art {
           mask: url('/img/notioncoracao.png') center / contain no-repeat;
   will-change: background-color, transform;
   z-index: 1;
-}
-
-.b06-punch {
-  text-align: center;
-  margin: 0;
 }
 
 .b06-complement {

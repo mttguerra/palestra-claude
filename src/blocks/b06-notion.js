@@ -78,7 +78,6 @@ registerBlock('b06', {
     const center = section.querySelector('.b06-heart');
     const arteries = section.querySelector('.b06-arteries');
     const hub = section.querySelector('.b06-hub');
-    const punch = section.querySelector('.b06-punch');
     const complement = section.querySelector('.b06-complement');
 
     // Mede posições reais ANTES de aplicar transforms iniciais
@@ -88,7 +87,7 @@ registerBlock('b06', {
       arteryResizeRO.observe(hub);
     }
 
-    gsap.set([title, punch, complement], { opacity: 0, y: 24 });
+    gsap.set([title, complement], { opacity: 0, y: 24 });
     gsap.set([inSide, outSide], { opacity: 1 });
     gsap.set(inCards, { opacity: 0, x: -40 });
     gsap.set(outCards, { opacity: 0, x: 40 });
@@ -111,8 +110,7 @@ registerBlock('b06', {
       { opacity: 1, scale: 1, duration: DURATION.slow, ease: EASE.bounceIn },
       '-=0.35'
     );
-    tl.to(punch,      { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy }, '+=0.1');
-    tl.to(complement, { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy }, '-=0.2');
+    tl.to(complement, { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy }, '+=0.1');
 
     tl.add(() => {
       const REST = '#0a0a0a';

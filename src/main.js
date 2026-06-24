@@ -42,7 +42,36 @@ async function loadBlocks() {
   });
   const root = document.getElementById('slides-root');
 
-  const sorted = Object.entries(blockModules).sort(([a], [b]) => a.localeCompare(b));
+  // Ordem explícita dos blocos (b10 vem logo após b06). Qualquer bloco não
+  // listado aqui cai no fim, mantendo a ordem alfabética entre eles.
+  const order = [
+    'b00-capa',
+    'b01-uppercut',
+    'b03-claude-code',
+    'b04-terminal',
+    'b05-biblioteca',
+    'b06-notion',
+    'b10-skills',
+    'b07-agent',
+    'b08-praticas',
+    'b09-soul-voice',
+    'b09a-notion-org',
+    'b09b-coffee',
+    'b11-filtro',
+    'b12-aprende',
+    'b13-xicoria',
+    'b14-fechamento',
+  ];
+  const stem = (path) => path.replace('./blocks/', '').replace('.html', '');
+  const rank = (path) => {
+    const i = order.indexOf(stem(path));
+    return i === -1 ? Number.MAX_SAFE_INTEGER : i;
+  };
+
+  const sorted = Object.entries(blockModules).sort(([a], [b]) => {
+    const diff = rank(a) - rank(b);
+    return diff !== 0 ? diff : a.localeCompare(b);
+  });
   for (const [, html] of sorted) {
     const section = document.createElement('section');
     section.innerHTML = html;
