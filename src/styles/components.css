@@ -330,20 +330,42 @@ video.b01-art {
   line-height: 1.05;
 }
 
-.b03-sub {
-  margin: 0.2rem 0 0;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.2rem, 1.9vw, 1.6rem);
-  color: var(--text-1);
-  line-height: 1.25;
-  letter-spacing: -0.005em;
-  max-width: 56ch;
+.b03-bullets {
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 0.7rem;
 }
 
-.b03-sub strong {
-  font-weight: 800;
-  color: #ffffff;
+.b03-bullets li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-2));
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  color: var(--text-1);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+
+/* marcador em accent antes de cada bullet */
+.b03-bullets li::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  flex: 0 0 auto;
 }
 
 .b03-hub {

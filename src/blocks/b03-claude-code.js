@@ -64,12 +64,14 @@ registerBlock('b03', {
     const orbit = section.querySelector('.b03-orbit');
     const nodes = [...section.querySelectorAll('.b03-node')];
     const microcopy = section.querySelector('.b03-microcopy');
+    const bullets = [...section.querySelectorAll('.b03-bullets li')];
 
     // Posição viva de cada nó (atualizada no ticker, lida pelos pulsos)
     const state = nodes.map((_, i) => nodePos(i, 0));
 
     // Estado inicial
     gsap.set([title, microcopy], { opacity: 0, y: 24 });
+    gsap.set(bullets, { opacity: 0, y: 14 });
     gsap.set(center, { opacity: 0, scale: 0, svgOrigin: `${CENTER.x} ${CENTER.y}` });
 
     nodes.forEach((node, i) => {
@@ -88,7 +90,9 @@ registerBlock('b03', {
         const h = parseFloat(image.getAttribute('height'));
         image.setAttribute('x', start.x - w / 2);
         image.setAttribute('y', start.y - h / 2);
-        gsap.set(image, { rotation: 0 });
+        // Ícone escondido (scale 0) — estoura junto do disco na hora do nó,
+        // senão os 6 ícones já aparecem todos antes de qualquer conexão.
+        gsap.set(image, { rotation: 0, scale: 0, svgOrigin: `${start.x} ${start.y}` });
       }
 
       const len = line.getTotalLength();
@@ -103,18 +107,26 @@ registerBlock('b03', {
     // 1. Título entra de cima
     tl.to(title, { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy });
 
+    // 1b. Bullets entram em cascata logo abaixo do título
+    tl.to(bullets, { opacity: 1, y: 0, duration: DURATION.base, stagger: 0.08, ease: EASE.snappy }, '-=0.2');
+
     // 2. Núcleo "Claude" estoura no centro
     tl.to(center, { opacity: 1, scale: 1, duration: DURATION.slow, ease: EASE.bounceIn }, '-=0.15');
 
-    // 3. 6 nós em cascata radial — linha desenha, círculo bounce
-    tl.addLabel('nodes', '-=0.2');
-    const stagger = 0.1;
+    // 3. 6 nós surgindo UM A UM — pra cada nó: a linha estica do centro até a
+    // posição, o disco estoura no fim da linha e o ícone aparece junto. O passo
+    // (step) é maior que antes pra cada nó completar antes do próximo começar →
+    // leitura sequencial de "conexão sendo feita", não tudo de uma vez.
+    tl.addLabel('nodes', '-=0.1');
+    const step = 0.42;
     nodes.forEach((node, i) => {
       const line = node.querySelector('line');
       const circle = node.querySelector('circle');
-      const at = i * stagger;
-      tl.to(line, { strokeDashoffset: 0, duration: 0.4, ease: EASE.snappy }, `nodes+=${at}`);
-      tl.to(circle, { scale: 1, duration: 0.4, ease: EASE.explosive }, `nodes+=${at + 0.15}`);
+      const image = node.querySelector('image');
+      const at = i * step;
+      tl.to(line, { strokeDashoffset: 0, duration: 0.32, ease: EASE.snappy }, `nodes+=${at}`);
+      tl.to(circle, { scale: 1, duration: 0.34, ease: EASE.explosive }, `nodes+=${at + 0.26}`);
+      if (image) tl.to(image, { scale: 1, duration: 0.3, ease: EASE.explosive }, `nodes+=${at + 0.3}`);
     });
 
     // 4. Microcopy final fecha
@@ -199,9 +211,16 @@ registerBlock('b03', {
       });
 
       // --- Clock contínuo: move cada nó pela sua trajetória ampla ---
+      // gsap.ticker entrega o tempo GLOBAL (desde o load), não 0. Ancoramos no
+      // primeiro frame pra a roam começar em t=0 — exatamente onde a intro
+      // deixou os nós (nodePos(i,0)). Sem isso, os 6 nós teletransportam de uma
+      // vez no instante em que o ticker assume → glitch visível.
+      let t0 = null;
       tickerFn = (time) => {
+        if (t0 === null) t0 = time;
+        const t = time - t0;
         for (let i = 0; i < nodes.length; i++) {
-          const pos = nodePos(i, time);
+          const pos = nodePos(i, t);
           state[i] = pos;
           const { line, circle, image, imgW, imgH } = refs[i];
           line.setAttribute('x2', pos.x);

@@ -9,11 +9,10 @@ registerBlock('b14', {
     const punch = section.querySelector('.b14-punch');
     const cta = section.querySelector('.b14-cta');
     const finalImg = section.querySelector('.b14-final');
-    const microcopy = section.querySelector('.b14-microcopy');
 
     gsap.set(recap, { opacity: 1 });
     gsap.set(recapChildren, { opacity: 0, x: -10 });
-    gsap.set([punch, cta, finalImg, microcopy], { opacity: 0, y: 24 });
+    gsap.set([punch, cta, finalImg], { opacity: 0, y: 24 });
 
     const tl = gsap.timeline();
     tl.to(recapChildren, { opacity: 1, x: 0, duration: 0.2, ease: EASE.snappy, stagger: 0.04 });
@@ -31,11 +30,6 @@ registerBlock('b14', {
       finalImg,
       { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy },
       '-=0.1'
-    );
-    tl.to(
-      microcopy,
-      { opacity: 1, y: 0, duration: DURATION.base, ease: EASE.snappy },
-      '-=0.05'
     );
   },
 });
